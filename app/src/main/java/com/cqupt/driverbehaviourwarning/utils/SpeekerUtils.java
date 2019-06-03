@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechSynthesizer;
+import com.iflytek.cloud.SynthesizerListener;
 
 /**
  * 内部静态类，单例模式
@@ -14,18 +15,23 @@ public class SpeekerUtils {
     private static final String TAG = "SpeekerUtils";
 
     private SpeechSynthesizer mTts;
-
+    //防止不正常播报
+    private volatile boolean speakSwitch = true;
 
     /**
      * 私有化构造方法
      */
-    private SpeekerUtils() {}
+    private SpeekerUtils() {
+    }
 
     /**
      * 静态工厂方法获取单例对象
+     *
      * @return 语音工具类
      */
-    public static SpeekerUtils getInstance() {return SingletonHolder.instance;}
+    public static SpeekerUtils getInstance() {
+        return SingletonHolder.instance;
+    }
 
     /**
      * 内部静态类：实例化 科大讯飞语音合成对象
@@ -36,58 +42,60 @@ public class SpeekerUtils {
 
     /**
      * 获取 播报者
+     *
      * @return 语音合成器
      */
-    public void speek(Context context, final String string) {
+    public void speak(Context context, final String string) {
         if (null == mTts) {
             mTts = initSpeekerUtils(context);
         }
-        speek(string);
+        //打开情况下，才播报语音
+        if (speakSwitch) {
+            //播报语音
+            mTts.startSpeaking(string, mSynthesizerListener);
+        }
     }
 
     /**
-     * 播放语音
-     * @param string 语音字符串
+     * 播报状态监听器
      */
-    private void speek(final String string) {
-        //3.开始合成
-        mTts.startSpeaking(string, new com.iflytek.cloud.SynthesizerListener() {
-            @Override
-            public void onSpeakBegin() {
+    private SynthesizerListener mSynthesizerListener = new com.iflytek.cloud.SynthesizerListener() {
+        @Override
+        public void onSpeakBegin() {
+            speakSwitch = false; //播放开始时，关闭开关。
+        }
 
-            }
+        @Override
+        public void onBufferProgress(int i, int i1, int i2, String s) {
 
-            @Override
-            public void onBufferProgress(int i, int i1, int i2, String s) {
+        }
 
-            }
+        @Override
+        public void onSpeakPaused() {
 
-            @Override
-            public void onSpeakPaused() {
+        }
 
-            }
+        @Override
+        public void onSpeakResumed() {
 
-            @Override
-            public void onSpeakResumed() {
+        }
 
-            }
+        @Override
+        public void onSpeakProgress(int i, int i1, int i2) {
 
-            @Override
-            public void onSpeakProgress(int i, int i1, int i2) {
+        }
 
-            }
+        @Override
+        public void onCompleted(SpeechError speechError) {
+            speakSwitch = true; //播放完成后，打开开关。
+        }
 
-            @Override
-            public void onCompleted(SpeechError speechError) {
+        @Override
+        public void onEvent(int i, int i1, int i2, Bundle bundle) {
 
-            }
+        }
+    };
 
-            @Override
-            public void onEvent(int i, int i1, int i2, Bundle bundle) {
-
-            }
-        });
-    }
 
     /**
      * 初始化SpeekerUtils配置

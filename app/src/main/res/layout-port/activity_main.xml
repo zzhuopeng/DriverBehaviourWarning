@@ -6,14 +6,12 @@
     android:orientation="vertical">
 
     <!-- 防撞预警 1-->
-    <LinearLayout
+    <ImageView
         android:id="@+id/anti_collision_linearlayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:orientation="vertical"
-        android:visibility="gone">
-    </LinearLayout>
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/map_layout"

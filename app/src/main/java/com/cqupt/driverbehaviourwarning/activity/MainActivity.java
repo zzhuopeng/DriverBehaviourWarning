@@ -1,20 +1,25 @@
-package com.cqupt.driverbehaviourwarning;
+package com.cqupt.driverbehaviourwarning.activity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,10 +36,7 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.bumptech.glide.request.target.ViewTarget;
+import com.cqupt.driverbehaviourwarning.R;
 import com.cqupt.driverbehaviourwarning.model.WarningMessage;
 import com.cqupt.driverbehaviourwarning.service.TCPService;
 import com.cqupt.driverbehaviourwarning.utils.MyOrientationListener;
@@ -44,8 +46,10 @@ import com.cqupt.driverbehaviourwarning.utils.ThreadPoolUtils;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.locks.Lock;
 
+/**
+ * 经过调试助手测试，接收消息的周期小于250ms，则只会弹出图片，不播报语音。
+ */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private boolean isPermissionGranted = false;
@@ -65,12 +69,13 @@ public class MainActivity extends AppCompatActivity {
     private float mCurrentAccracy;
 
     //防撞预警
-    private LinearLayout anti_collision_linearlayout;
+    private ImageView anti_collision_ImageView;
     private long AntiColli_MAX_LIMIT_TIME = 3000; // 防撞预警显示时间
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "onCreate");
         setContentView(R.layout.activity_main);
 
         //获取权限
@@ -88,32 +93,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 while (true) {
+                    WarningMessage warningMessage;
                     synchronized (MyApplication.lock) {
-                        if (null == MyApplication.warningMessage) {
+                        if (0 == MyApplication.warningMessage.size()) {
                             try {
                                 MyApplication.lock.wait();
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                         }
-
-                        switch (MyApplication.warningMessage.getValue()) {
-                            case "0":
-                                SpeekerUtils.getInstance().speek(getApplicationContext(), "注意，驾驶员有不良驾驶行为。");
-                                popupWarning(R.drawable.image_view_car_warning19001);
-                                //popupWarning(R.drawable.g_image_view_car_warning19001, R.drawable.loading);
-                                break;
-                            case "1":
-                                SpeekerUtils.getInstance().speek(getApplicationContext(), "危险，驾驶员有危险驾驶行为。");
-                                popupWarning(R.drawable.image_view_car_warning19001);
-                                break;
-                            case "2":
-                                SpeekerUtils.getInstance().speek(getApplicationContext(), "一切正常，请继续保持。");
-                                popupWarning(R.drawable.image_view_car_warning19001);
-                                break;
-                        }
-                        MyApplication.warningMessage = null;//清空
+                        warningMessage = MyApplication.warningMessage.poll();
                     }
+                    if (null == warningMessage) {
+                        continue;
+                    }
+                    switch (warningMessage.getValue()) {
+                        case "0":
+                            SpeekerUtils.getInstance().speak(getApplicationContext(), "注意，驾驶员有不良驾驶行为。");
+                            //popupWarning(R.drawable.image_view_car_warning19001);
+                            popupWarning(R.drawable.g_image_view_car_warning19001, R.drawable.loading);
+                            break;
+                        case "1":
+                            SpeekerUtils.getInstance().speak(getApplicationContext(), "危险，驾驶员有危险驾驶行为。");
+                            popupWarning(R.drawable.image_view_car_warning19001);
+                            break;
+                        case "2":
+                            SpeekerUtils.getInstance().speak(getApplicationContext(), "一切正常，请继续保持。");
+                            popupWarning(R.drawable.image_view_car_warning19001);
+                            break;
+                    }
+
                 }
             }
         });
@@ -123,25 +132,26 @@ public class MainActivity extends AppCompatActivity {
      * 初始化弹出窗口
      */
     private void initView() {
-        anti_collision_linearlayout = (LinearLayout) findViewById(R.id.anti_collision_linearlayout);
-        anti_collision_linearlayout.setVisibility(View.GONE);
+        anti_collision_ImageView = (ImageView) findViewById(R.id.anti_collision_linearlayout);
+        anti_collision_ImageView.setVisibility(View.GONE);
     }
 
     /**
      * 弹出窗口（主线程）:图片
+     *
      * @param sourceID
      */
     void popupWarning(final int sourceID) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if (anti_collision_linearlayout.getVisibility() != View.VISIBLE) {
-                    anti_collision_linearlayout.setBackgroundResource(sourceID);
-                    anti_collision_linearlayout.setVisibility(View.VISIBLE);
-                    anti_collision_linearlayout.postDelayed(new Runnable() {
+                if (anti_collision_ImageView.getVisibility() != View.VISIBLE) {
+                    anti_collision_ImageView.setBackgroundResource(sourceID);
+                    anti_collision_ImageView.setVisibility(View.VISIBLE);
+                    anti_collision_ImageView.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            anti_collision_linearlayout.setVisibility(View.GONE);
+                            anti_collision_ImageView.setVisibility(View.GONE);
                         }
                     }, AntiColli_MAX_LIMIT_TIME);
                 }
@@ -151,46 +161,55 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * 弹出窗口（主线程）:动图
-     * @param gifURL 动图ID
+     *
+     * @param gifURL      动图ID
      * @param placeHolder 占位图ID
      */
-//    void popupWarning(final int gifURL, final int placeHolder) {
-//        runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (anti_collision_linearlayout.getVisibility() != View.VISIBLE) {
-//                    anti_collision_linearlayout.setVisibility(View.VISIBLE);
-//                    //加载动图
-//                    Glide.with(anti_collision_linearlayout.getContext())
-//                            .load(gifURL)
-//                            .asGif()
-//                            .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-//                            .placeholder(placeHolder)
-//                            .error(placeHolder)
-//                            .into(new ViewTarget<View, GlideDrawable>(anti_collision_linearlayout) {
-//                                @Override
-//                                public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
-//                                    this.view.setBackground(resource.getCurrent());
-//                                }
-//                            });
-//                    //显示时间
-//                    anti_collision_linearlayout.postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            anti_collision_linearlayout.setVisibility(View.GONE);
-//                        }
-//                    }, AntiColli_MAX_LIMIT_TIME);
-//                }
-//            }
-//        });
-//    }
+    void popupWarning(final int gifURL, final int placeHolder) {
+        runOnUiThread(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+            @Override
+            public void run() {
+                if (null == anti_collision_ImageView.getContext()) {
+                    Log.e(TAG, "popupWarning:  Context can not be null");
+                    return;
+                }
+                //如果当前Activity被destroy了，则不调用Glide，防止崩溃
+                if (anti_collision_ImageView.getContext() instanceof Activity) {
+                    Activity activity = (Activity) anti_collision_ImageView.getContext();
+                    if (activity.isDestroyed()){
+                        Log.e(TAG, "popupWarning:  Context can not be destroy");
+                        return;
+                    }
+                }
+                if (anti_collision_ImageView.getVisibility() != View.VISIBLE) {
+                    anti_collision_ImageView.setVisibility(View.VISIBLE);
+                    //加载动图
+                    Glide.with(anti_collision_ImageView.getContext())
+                            .load(gifURL)
+                            .asGif()
+                            .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                            .placeholder(placeHolder)
+                            .error(placeHolder)
+                            .into(anti_collision_ImageView);
+                    //显示时间
+                    anti_collision_ImageView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            anti_collision_ImageView.setVisibility(View.GONE);
+                        }
+                    }, AntiColli_MAX_LIMIT_TIME);
+                }
+            }
+        });
+    }
 
     /**
      * 开启Server Socket，等待连接
      */
     private void startServer() {
         Intent iService = new Intent(this, TCPService.class);
-        iService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //iService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startService(iService);
     }
 
@@ -199,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void stopService() {
         Intent iService = new Intent(this, TCPService.class);
-        iService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //iService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         stopService(iService);
     }
 
@@ -374,6 +393,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.i(TAG, "onResume");
         //地图生命周期管理
         mMapView.onResume();
         //Current activity is on the top of the stack, start positioning
@@ -387,6 +407,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        Log.i(TAG, "onPause");
         //地图生命周期管理
         mMapView.onPause();
     }
@@ -394,6 +415,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        Log.i(TAG, "onStop");
         //Current activity is not on the top of the stack, stop positioning
         mBaiduMap.setMyLocationEnabled(false);
         mLocClient.stop();
@@ -402,6 +424,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.i(TAG, "onDestroy");
         //地图生命周期管理
         mMapView.onDestroy();
         //关闭Server Socket服务
@@ -413,8 +436,10 @@ public class MainActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
 
         if (Configuration.ORIENTATION_LANDSCAPE == newConfig.orientation) {
+            Log.i(TAG, "onConfigurationChanged: " + "Horizontal screen");
             Toast.makeText(this, "Horizontal screen", Toast.LENGTH_SHORT).show();
         } else if (Configuration.ORIENTATION_PORTRAIT == newConfig.orientation) {
+            Log.i(TAG, "onConfigurationChanged: " + "Vertical screen");
             Toast.makeText(this, "Vertical screen", Toast.LENGTH_SHORT).show();
         }
     }

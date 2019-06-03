@@ -29,8 +29,10 @@ public class TCPService extends Service {
         Log.i(TAG, "onCreate: 创建socket 端口6003");
         try {
             serversocket = new ServerSocket(6003);
+            Log.i(TAG, "TCPService->>>>onCreate: new ServerSocket success");
         } catch (IOException e) {
             e.printStackTrace();
+            Log.e(TAG, "TCPService->>>>onCreate: new ServerSocket occur exception");
         }
     }
 
@@ -73,6 +75,15 @@ public class TCPService extends Service {
         public void run() {
 
             while (true) {
+                if (null == serversocket) {
+                    Log.w(TAG, "ServiceThread--->>>serversocket can not be null.");
+                    return;
+                }
+                //如果serversocket已经关闭，则关闭本线程
+                if (serversocket.isClosed()) {
+                    Log.e(TAG, "ServiceThread--->>>serversocket is closed.");
+                    break;
+                }
                 try {
                     count++;
                     Socket socket = serversocket.accept();//阻塞

@@ -1,17 +1,17 @@
-package com.cqupt.driverbehaviourwarning;
+package com.cqupt.driverbehaviourwarning.activity;
 
 import android.app.Application;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.cqupt.driverbehaviourwarning.model.WarningMessage;
-import com.cqupt.driverbehaviourwarning.service.TCPService;
+import com.cqupt.driverbehaviourwarning.utils.SetList;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 
 public class MyApplication extends Application {
 
-    public static volatile WarningMessage warningMessage;
+    public static volatile SetList<WarningMessage> warningMessage = new SetList<>();
     public static final Object lock = new Object(); //用于同步预警消息
 
     @Override

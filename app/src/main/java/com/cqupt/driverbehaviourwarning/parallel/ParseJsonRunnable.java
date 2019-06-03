@@ -1,6 +1,6 @@
 package com.cqupt.driverbehaviourwarning.parallel;
 
-import com.cqupt.driverbehaviourwarning.MyApplication;
+import com.cqupt.driverbehaviourwarning.activity.MyApplication;
 import com.cqupt.driverbehaviourwarning.model.WarningMessage;
 import com.google.gson.Gson;
 
@@ -38,7 +38,7 @@ public class ParseJsonRunnable implements Runnable {
                 //使用Gson直接将Json转对象
                 Gson gson = new Gson();
                 synchronized (MyApplication.lock) {
-                    MyApplication.warningMessage = gson.fromJson(jsonObject.toString(), WarningMessage.class);
+                    MyApplication.warningMessage.add(gson.fromJson(jsonObject.toString(), WarningMessage.class));
                     MyApplication.lock.notifyAll();//通知被锁住的线程，预警驾驶员
                 }
             }

@@ -23,11 +23,11 @@
     <!--程序在手机屏幕关闭后后台进程仍然运行-->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--允许程序改变网络连接状态 -->
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
 
     <application
-        android:name=".MyApplication"
+        android:name=".activity.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -41,9 +41,12 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="kB9oy4vo8NqdrlMUSQ982ZMCnxiTwqdm" />
 
-        <!--orientation|-->
-        <activity android:name=".MainActivity"
-            android:configChanges="screenSize|screenLayout"
+        <!--
+            android:configChanges="orientation|screenSize|screenLayout"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+        -->
+        <activity
+            android:name=".activity.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,7 +55,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".service.TCPService"/>
+        <service android:name=".service.TCPService" />
 
         <service
             android:name="com.baidu.location.f"
