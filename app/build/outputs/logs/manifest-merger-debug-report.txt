@@ -1,0 +1,172 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\96e6653d427f19365f79f5d2bc2c9501\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f1dd8c9f41df09ad2622ea828ab50908\AndroidManifest.xml:2:1-11:12
+MERGED from [jp.wasabeef:glide-transformations:2.0.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\glide-transformations-2.0.1.aar\aaa7b2217098de04c7e3678934bdb2c1\AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\a926c50092a62894bc414f96fd632f2a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\23c306edb3708b14f7715ea7b79748bf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\be9bfea6e6dfe6afba73909638a15926\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c2c62f2215606863076ed86e8842a3dd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\9dc889c273da39c3d6ea74ab125fbb01\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5f08b5df356ae9028c02aee3a6b4834e\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\71237ffb392f4a7f3c2107afa2143fe8\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\41bc14971c4dcdcb1c67f36c7564b52b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2a40e94afdecd5ab0051cfe8dfdc3749\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\250fa067b0270ce13a8ebda1ae8ce59a\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+	package
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:1-67:12
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.INTERNET
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:8:5-67
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:8:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:10:5-75
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:10:22-72
+uses-permission#com.android.launcher.permission.READ_SETTINGS
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:12:5-85
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:12:22-82
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:14:5-76
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:14:22-73
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:16:5-81
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:16:22-78
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:18:5-81
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:18:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:20:22-76
+uses-permission#android.permission.CAMERA
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:22:5-65
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:22:22-62
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:24:22-65
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:26:22-76
+application
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:29:5-65:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f1dd8c9f41df09ad2622ea828ab50908\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f1dd8c9f41df09ad2622ea828ab50908\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:35:9-35
+	android:label
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:33:9-41
+	android:roundIcon
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:34:9-54
+	android:icon
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:32:9-43
+	android:allowBackup
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:31:9-35
+	android:theme
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:36:9-40
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:30:9-47
+meta-data#com.baidu.lbsapi.API_KEY
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:40:9-42:64
+	android:value
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:42:13-61
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:41:13-52
+activity#com.cqupt.driverbehaviourwarning.activity.MainActivity
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:48:9-56:20
+	android:theme
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:50:13-69
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:49:13-50
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:51:13-55:29
+action#android.intent.action.MAIN
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:52:17-69
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:52:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:54:17-77
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:54:27-74
+service#com.cqupt.driverbehaviourwarning.service.TCPService
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:58:9-55
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:58:18-52
+service#com.baidu.location.f
+ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:60:9-63:41
+	android:process
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:63:13-38
+	android:enabled
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:62:13-35
+	android:name
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml:61:13-48
+uses-sdk
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\96e6653d427f19365f79f5d2bc2c9501\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\96e6653d427f19365f79f5d2bc2c9501\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f1dd8c9f41df09ad2622ea828ab50908\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\f1dd8c9f41df09ad2622ea828ab50908\AndroidManifest.xml:5:5-7:41
+MERGED from [jp.wasabeef:glide-transformations:2.0.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\glide-transformations-2.0.1.aar\aaa7b2217098de04c7e3678934bdb2c1\AndroidManifest.xml:8:5-10:41
+MERGED from [jp.wasabeef:glide-transformations:2.0.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\glide-transformations-2.0.1.aar\aaa7b2217098de04c7e3678934bdb2c1\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\a926c50092a62894bc414f96fd632f2a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\a926c50092a62894bc414f96fd632f2a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\23c306edb3708b14f7715ea7b79748bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\23c306edb3708b14f7715ea7b79748bf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\be9bfea6e6dfe6afba73909638a15926\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\be9bfea6e6dfe6afba73909638a15926\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c2c62f2215606863076ed86e8842a3dd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c2c62f2215606863076ed86e8842a3dd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\9dc889c273da39c3d6ea74ab125fbb01\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\9dc889c273da39c3d6ea74ab125fbb01\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5f08b5df356ae9028c02aee3a6b4834e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\5f08b5df356ae9028c02aee3a6b4834e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\71237ffb392f4a7f3c2107afa2143fe8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\71237ffb392f4a7f3c2107afa2143fe8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\41bc14971c4dcdcb1c67f36c7564b52b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\41bc14971c4dcdcb1c67f36c7564b52b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2a40e94afdecd5ab0051cfe8dfdc3749\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2a40e94afdecd5ab0051cfe8dfdc3749\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\250fa067b0270ce13a8ebda1ae8ce59a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\zhang\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\250fa067b0270ce13a8ebda1ae8ce59a\AndroidManifest.xml:20:5-44
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+		ADDED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
+		INJECTED from D:\C_extra_folder\AndroidStudioProjects\2_LabsProject\DriverBehaviourWarning\app\src\main\AndroidManifest.xml
