@@ -25,13 +25,11 @@
     <!--允许程序改变网络连接状态 -->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-
 
     <application
         android:name=".activity.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -39,9 +37,10 @@
 
 
         <!-- zzp台式&HJkeystore：kB9oy4vo8NqdrlMUSQ982ZMCnxiTwqdm -->
+        <!-- XPS:cPG756Gthk2QZ3IBNURBxOPShRcf5Rez -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="kB9oy4vo8NqdrlMUSQ982ZMCnxiTwqdm" />
+            android:value="cPG756Gthk2QZ3IBNURBxOPShRcf5Rez" />
 
         <!--
             android:configChanges="orientation|screenSize|screenLayout"

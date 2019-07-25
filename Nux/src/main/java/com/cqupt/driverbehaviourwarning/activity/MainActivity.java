@@ -119,19 +119,26 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case "210":
                         case "200":
+                        case "220":
                             SpeekerUtils.getInstance().speak(getApplicationContext(), "注意，驾驶员有危险驾驶行为。");
                             popupWarning(R.drawable.danger);
                             break;
                         case "031":
+                        case "032":
                         case "001":
+                        case "002":
                         case "011":
+                        case "012":
                             SpeekerUtils.getInstance().speak(getApplicationContext(), "注意，请驾驶员目视前方。");
                             popupWarning(R.drawable.eyeonroad);
                             break;
                         case "020":
-                        //case "030":
+                            //case "030":
                             SpeekerUtils.getInstance().speak(getApplicationContext(), "注意，请驾驶员注意休息。");
                             popupWarning(R.drawable.rest);
+                            break;
+                        default:
+                            Log.i(TAG, "run: parse data error!" + BodyFatigueHead);
                             break;
                     }
                 }
@@ -188,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                 //如果当前Activity被destroy了，则不调用Glide，防止崩溃
                 if (anti_collision_ImageView.getContext() instanceof Activity) {
                     Activity activity = (Activity) anti_collision_ImageView.getContext();
-                    if (activity.isDestroyed()){
+                    if (activity.isDestroyed()) {
                         Log.e(TAG, "popupWarning:  Context can not be destroy");
                         return;
                     }

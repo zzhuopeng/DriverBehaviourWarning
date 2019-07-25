@@ -4,9 +4,7 @@ public class WarningMessage {
 
     private String ID;
     private String Time;
-    private int Body;//为三位字符，身体姿势Body+疲劳程度Fatigue+头部姿势Head
-    private int Fatigue;
-    private int Head;
+    private String Body;//为三位字符，身体姿势Body+疲劳程度Fatigue+头部姿势Head
 
     public WarningMessage() {
     }

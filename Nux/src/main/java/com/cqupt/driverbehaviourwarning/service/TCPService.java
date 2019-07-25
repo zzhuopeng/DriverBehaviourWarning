@@ -26,9 +26,9 @@ public class TCPService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.i(TAG, "onCreate: 创建socket 端口6003");
+        Log.i(TAG, "onCreate: 创建socket 端口8080");
         try {
-            serversocket = new ServerSocket(6003);
+            serversocket = new ServerSocket(8080);
             Log.i(TAG, "TCPService->>>>onCreate: new ServerSocket success");
         } catch (IOException e) {
             e.printStackTrace();

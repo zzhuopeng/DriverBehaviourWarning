@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case "210":
                         case "200":
+                        case "220":
                             SpeekerUtils.getInstance().speak(getApplicationContext(), "注意，驾驶员有危险驾驶行为。");
                             popupWarning(R.drawable.danger);
                             break;
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                             popupWarning(R.drawable.eyeonroad);
                             break;
                         case "020":
-                        //case "030":
+                            //case "030":
                             SpeekerUtils.getInstance().speak(getApplicationContext(), "注意，请驾驶员注意休息。");
                             popupWarning(R.drawable.rest);
                             break;
@@ -188,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 //如果当前Activity被destroy了，则不调用Glide，防止崩溃
                 if (anti_collision_ImageView.getContext() instanceof Activity) {
                     Activity activity = (Activity) anti_collision_ImageView.getContext();
-                    if (activity.isDestroyed()){
+                    if (activity.isDestroyed()) {
                         Log.e(TAG, "popupWarning:  Context can not be destroy");
                         return;
                     }
@@ -306,6 +307,8 @@ public class MainActivity extends AppCompatActivity {
                 locData = new MyLocationData.Builder().accuracy(mCurrentAccracy).direction(mCurrentDirection)
                         .latitude(mCurrentLat).longitude(mCurrentLon).build();
                 mBaiduMap.setMyLocationData(locData);
+                Log.i(TAG, "mCurrentLat" + mCurrentLat + ", mCurrentLon" + mCurrentLon
+                        + ", mCurrentAccracy" + mCurrentAccracy + ", mCurrentDirection" + mCurrentDirection);
             }
         });
     }
@@ -410,7 +413,7 @@ public class MainActivity extends AppCompatActivity {
         //Current activity is on the top of the stack, start positioning
         mBaiduMap.setMyLocationEnabled(true);
         //if all permissions granted, then start LocationClient.
-        if (!mLocClient.isStarted() && isPermissionGranted) {
+        if (!mLocClient.isStarted()) {
             mLocClient.start();
         }
     }
